@@ -9,6 +9,7 @@
 <body>
     <h2>Open Developer Tools!</h2>
     <div>Inspect this element! &darr;</div>
+    <elm-stopper></elm-stopper>
 
     <script src="./node_modules/@webcomponents/webcomponentsjs/webcomponents-lite.js"></script>
     <script src="./node_modules/systemjs/dist/system.js"></script>
@@ -16,10 +17,7 @@
         window.define = SystemJS.amdDefine
         window.require = window.requirejs = SystemJS.amdRequire
 
-        System.import('./dist/elm-stopper.js').then(elmStoper => {
-            let stoper = document.createElement('elm-stopper')
-            document.body.appendChild(stoper)
-        })
+        System.import('./dist/elm-stopper.js')
     </script>
 </body>
 
