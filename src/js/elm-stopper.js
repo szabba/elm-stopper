@@ -1,10 +1,10 @@
-import { Elm } from './elm-stopper.elm.js'
+import Elm from './elm-stopper.elm.js'
 
 class ElmStopper extends HTMLElement {
     constructor() {
         super()
         this.attachShadow({ mode: 'open' })
-        Elm.Stopper.Main.embed(this.shadowRoot)
+        Elm.Main.embed(this.shadowRoot)
     }
 }
 

@@ -2,6 +2,10 @@
 
 var _elmStopperElm = require('./elm-stopper.elm.js');
 
+var _elmStopperElm2 = _interopRequireDefault(_elmStopperElm);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
@@ -25,7 +29,7 @@ var ElmStopper = function (_CustomElement2) {
         var _this = _possibleConstructorReturn(this, (ElmStopper.__proto__ || Object.getPrototypeOf(ElmStopper)).call(this));
 
         _this.attachShadow({ mode: 'open' });
-        _elmStopperElm.Elm.Stopper.Main.embed(_this.shadowRoot);
+        _elmStopperElm2.default.Main.embed(_this.shadowRoot);
         return _this;
     }
 

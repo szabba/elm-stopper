@@ -12,11 +12,8 @@
     <elm-stopper></elm-stopper>
 
     <script src="./node_modules/@webcomponents/webcomponentsjs/webcomponents-lite.js"></script>
-    <script src="./node_modules/systemjs/dist/system.js"></script>
+    <script src="./node_modules/systemjs/dist/system.src.js"></script>
     <script>
-        window.define = SystemJS.amdDefine
-        window.require = window.requirejs = SystemJS.amdRequire
-
         System.import('./dist/elm-stopper.js')
     </script>
 </body>
