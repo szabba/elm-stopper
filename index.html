@@ -15,17 +15,7 @@
     <script>
         window.define = SystemJS.amdDefine
         window.require = window.requirejs = SystemJS.amdRequire
-        SystemJS.config({
-            baseURL: '/node_modules/',
-            meta: {
-                '*.css': { loader: 'systemjs-plugin-text' },
-                '*.html': { loader: 'systemjs-plugin-text' },
-            },
-            packageConfigPaths: [
-                '*/package.json',
-                '@*/*/package.json',
-            ],
-        })
+
         System.import('./dist/elm-stopper.js').then(elmStoper => {
             let stoper = document.createElement('elm-stopper')
             document.body.appendChild(stoper)
