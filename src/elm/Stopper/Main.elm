@@ -240,7 +240,8 @@ simpleUpdate msg model =
             Running state
 
         ( Reset, Stopped state ) ->
-            Started
+            Running
+                { state | start = state.now, log = [] }
 
         _ ->
             model
