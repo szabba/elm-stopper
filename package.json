@@ -1,13 +1,13 @@
 {
-  "name": "elm-stopper",
+  "name": "elm-stoper",
   "version": "1.0.0",
-  "main": "src/js/elm-stopper.js",
+  "main": "dist/elm-stoper.js",
   "author": "Karol Marcjan <karol.marcjan@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "build:elm": "mkdir -p dist/ && elm make src/elm/Stopper/Main.elm --output dist/elm-stopper.elm.js",
+    "build:elm": "mkdir -p dist/ && elm make src/elm/Stoper/Main.elm --output dist/elm-stoper.elm.js",
     "build:js": "mkdir -p dist/ && babel src/js -d dist",
-    "clean:elm": "rm dist/elm-stopper.elm.js || true",
+    "clean:elm": "rm dist/elm-stoper.elm.js || true",
     "clean:dist": "rm -rf dist/ || true",
     "serve": "elm reactor"
   },

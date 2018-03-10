@@ -1,8 +1,8 @@
 'use strict';
 
-var _elmStopperElm = require('./elm-stopper.elm.js');
+var _elmStoperElm = require('./elm-stoper.elm.js');
 
-var _elmStopperElm2 = _interopRequireDefault(_elmStopperElm);
+var _elmStoperElm2 = _interopRequireDefault(_elmStoperElm);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -20,20 +20,20 @@ function _CustomElement() {
 Object.setPrototypeOf(_CustomElement.prototype, HTMLElement.prototype);
 Object.setPrototypeOf(_CustomElement, HTMLElement);
 
-var ElmStopper = function (_CustomElement2) {
-    _inherits(ElmStopper, _CustomElement2);
+var ElmStoper = function (_CustomElement2) {
+    _inherits(ElmStoper, _CustomElement2);
 
-    function ElmStopper() {
-        _classCallCheck(this, ElmStopper);
+    function ElmStoper() {
+        _classCallCheck(this, ElmStoper);
 
-        var _this = _possibleConstructorReturn(this, (ElmStopper.__proto__ || Object.getPrototypeOf(ElmStopper)).call(this));
+        var _this = _possibleConstructorReturn(this, (ElmStoper.__proto__ || Object.getPrototypeOf(ElmStoper)).call(this));
 
         _this.attachShadow({ mode: 'open' });
-        _elmStopperElm2.default.Main.embed(_this.shadowRoot);
+        _elmStoperElm2.default.Main.embed(_this.shadowRoot);
         return _this;
     }
 
-    return ElmStopper;
+    return ElmStoper;
 }(_CustomElement);
 
-customElements.define('elm-stopper', ElmStopper);
+customElements.define('elm-stoper', ElmStoper);
