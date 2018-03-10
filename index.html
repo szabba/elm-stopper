@@ -9,8 +9,44 @@
 <body>
     <h2>Open Developer Tools!</h2>
     <div>Inspect this element! &darr;</div>
-    <elm-stopper></elm-stopper>
-    <script type="module" src="./src/js/elm-stopper.js"></script>
+
+    <script src="./node_modules/@webcomponents/webcomponentsjs/webcomponents-lite.js"></script>
+    <script src="./node_modules/systemjs/dist/system.js"></script>
+    <script>
+        SystemJS.config({
+            baseURL: '/node_modules/',
+            meta: {
+                '*.css': { loader: 'systemjs-plugin-text' },
+                '*.html': { loader: 'systemjs-plugin-text' },
+                '*.js': {
+                    babelOptions: {
+                        plugins: [
+                            'transform-custom-element-classes',
+                        ],
+                    },
+                },
+            },
+            packagesConfigPaths: [
+                'node_modules/*/package.json',
+                'node_modules/@*/*/package.json',
+            ],
+            transpiler: 'plugin-babel',
+            // Maintaining this manually cannot be the way to go:
+            //
+            // map: {
+            //     'plugin-babel': './node_modules/systemjs-plugin-babel/plugin-babel.js',
+            //     'systemjs-babel-build': './node_modules/systemjs-plugin-babel/systemjs-babel-browser.js',
+            //     'transform-custom-element-classes': './node_modules/babel-plugin-transform-custom-element-classes/lib/index.js',
+            //     'babel-template': './node_modules/babel-template/lib/index.js',
+            // },
+        })
+        System.import('./src/js/elm-stopper.js').then(elmStoper => {
+            let stoper = document.createElement('elm-stopper')
+            document.getElementsByTagName('body')
+                .item(0)
+                .appendChild(stoper)
+        })
+    </script>
 </body>
 
 </html>

@@ -9,7 +9,13 @@
     "serve": "elm reactor"
   },
   "devDependencies": {
+    "babel-plugin-transform-custom-element-classes": "^0.1.0",
     "elm": "^0.18.0",
-    "elm-format": "^0.7.0-exp"
+    "elm-format": "^0.7.0-exp",
+    "systemjs-plugin-babel": "^0.0.25"
+  },
+  "dependencies": {
+    "@webcomponents/webcomponentsjs": "^1.1.0",
+    "systemjs": "^0.21.0"
   }
 }
