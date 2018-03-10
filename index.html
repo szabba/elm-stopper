@@ -26,19 +26,16 @@
                     },
                 },
             },
-            packagesConfigPaths: [
-                'node_modules/*/package.json',
-                'node_modules/@*/*/package.json',
+            packageConfigPaths: [
+                '*/package.json',
+                '@*/*/package.json',
             ],
             transpiler: 'plugin-babel',
-            // Maintaining this manually cannot be the way to go:
-            //
-            // map: {
-            //     'plugin-babel': './node_modules/systemjs-plugin-babel/plugin-babel.js',
-            //     'systemjs-babel-build': './node_modules/systemjs-plugin-babel/systemjs-babel-browser.js',
-            //     'transform-custom-element-classes': './node_modules/babel-plugin-transform-custom-element-classes/lib/index.js',
-            //     'babel-template': './node_modules/babel-template/lib/index.js',
-            // },
+            map: {
+                'plugin-babel': './node_modules/systemjs-plugin-babel/plugin-babel.js',
+                'systemjs-babel-build': './node_modules/systemjs-plugin-babel/systemjs-babel-browser.js',
+                'transform-custom-element-classes': './node_modules/babel-plugin-transform-custom-element-classes/lib/index.js',
+            },
         })
         System.import('./src/js/elm-stopper.js').then(elmStoper => {
             let stoper = document.createElement('elm-stopper')
