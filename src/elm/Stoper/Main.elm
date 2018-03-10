@@ -198,7 +198,7 @@ subscriptions model =
 
 ticks : Sub Msg
 ticks =
-    Time.every Time.second Tick
+    Time.every (Time.second / 10) Tick
 
 
 update : Msg -> Model -> ( Model, Cmd Msg )

@@ -11883,7 +11883,7 @@ var _user$project$Main$viewWithState = F2(
 var _user$project$Main$Tick = function (a) {
 	return {ctor: 'Tick', _0: a};
 };
-var _user$project$Main$ticks = A2(_elm_lang$core$Time$every, _elm_lang$core$Time$second, _user$project$Main$Tick);
+var _user$project$Main$ticks = A2(_elm_lang$core$Time$every, _elm_lang$core$Time$second / 10, _user$project$Main$Tick);
 var _user$project$Main$subscriptions = function (model) {
 	var _p13 = model;
 	switch (_p13.ctor) {
