@@ -5,9 +5,9 @@
   "author": "Karol Marcjan <karol.marcjan@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "build:elm": "mkdir -p dist/ && elm make src/elm/Stopper/Main.elm --output src/js/elm-stopper.elm.js",
+    "build:elm": "mkdir -p dist/ && elm make src/elm/Stopper/Main.elm --output dist/elm-stopper.elm.js",
     "build:js": "mkdir -p dist/ && babel src/js -d dist",
-    "clean:elm": "rm -src/js/elm-stopper.elm.js || true",
+    "clean:elm": "rm dist/elm-stopper.elm.js || true",
     "clean:dist": "rm -rf dist/ || true",
     "serve": "elm reactor"
   },
