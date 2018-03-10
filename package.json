@@ -5,8 +5,10 @@
   "author": "Karol Marcjan <karol.marcjan@gmail.com>",
   "license": "MIT",
   "scripts": {
+    "build": "yarn run build:elm && yarn run build:js",
     "build:elm": "mkdir -p dist/ && elm make src/elm/Stoper/Main.elm --output dist/elm-stoper.elm.js",
     "build:js": "mkdir -p dist/ && babel src/js -d dist",
+    "clean": "yarn run clean:elm && yarn run clean:dist",
     "clean:elm": "rm dist/elm-stoper.elm.js || true",
     "clean:dist": "rm -rf dist/ || true",
     "serve": "elm reactor"
@@ -17,7 +19,8 @@
     "babel-preset-env": "^1.6.1",
     "elm": "^0.18.0",
     "elm-format": "^0.7.0-exp",
-    "systemjs-plugin-babel": "^0.0.25"
+    "systemjs-plugin-babel": "^0.0.25",
+    "yarn": "^1.5.1"
   },
   "dependencies": {
     "@webcomponents/webcomponentsjs": "^1.1.0",
