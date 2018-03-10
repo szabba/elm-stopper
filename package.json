@@ -5,11 +5,16 @@
   "author": "Karol Marcjan <karol.marcjan@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "build:elm": "elm make src/elm/Stopper/Main.elm --output src/js/elm-stopper.elm.js",
+    "build:elm": "mkdir -p dist/ && elm make src/elm/Stopper/Main.elm --output src/js/elm-stopper.elm.js",
+    "build:js": "mkdir -p dist/ && babel src/js -d dist",
+    "clean:elm": "rm -src/js/elm-stopper.elm.js || true",
+    "clean:dist": "rm -rf dist/ || true",
     "serve": "elm reactor"
   },
   "devDependencies": {
+    "babel-cli": "^6.26.0",
     "babel-plugin-transform-custom-element-classes": "^0.1.0",
+    "babel-preset-env": "^1.6.1",
     "elm": "^0.18.0",
     "elm-format": "^0.7.0-exp",
     "systemjs-plugin-babel": "^0.0.25"
@@ -17,5 +22,8 @@
   "dependencies": {
     "@webcomponents/webcomponentsjs": "^1.1.0",
     "systemjs": "^0.21.0"
-  }
+  },
+  "browserlist": [
+    "> 1%"
+  ]
 }

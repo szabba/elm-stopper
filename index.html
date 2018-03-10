@@ -18,30 +18,15 @@
             meta: {
                 '*.css': { loader: 'systemjs-plugin-text' },
                 '*.html': { loader: 'systemjs-plugin-text' },
-                '*.js': {
-                    babelOptions: {
-                        plugins: [
-                            'transform-custom-element-classes',
-                        ],
-                    },
-                },
             },
             packageConfigPaths: [
                 '*/package.json',
                 '@*/*/package.json',
             ],
-            transpiler: 'plugin-babel',
-            map: {
-                'plugin-babel': './node_modules/systemjs-plugin-babel/plugin-babel.js',
-                'systemjs-babel-build': './node_modules/systemjs-plugin-babel/systemjs-babel-browser.js',
-                'transform-custom-element-classes': './node_modules/babel-plugin-transform-custom-element-classes/lib/index.js',
-            },
         })
-        System.import('./src/js/elm-stopper.js').then(elmStoper => {
+        System.import('./dist/elm-stopper.js').then(elmStoper => {
             let stoper = document.createElement('elm-stopper')
-            document.getElementsByTagName('body')
-                .item(0)
-                .appendChild(stoper)
+            document.body.appendChild(stoper)
         })
     </script>
 </body>
