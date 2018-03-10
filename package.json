@@ -11,6 +11,7 @@
     "clean": "yarn run clean:elm && yarn run clean:dist",
     "clean:elm": "rm dist/elm-stoper.elm.js || true",
     "clean:dist": "rm -rf dist/ || true",
+    "prepare": "yarn run build",
     "serve": "elm reactor"
   },
   "devDependencies": {
